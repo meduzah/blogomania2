@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌗 Zmienna kolorów dla trybu jasnego i ciemnego */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --accent: #4f46e5; /* Fioletowy akcent */
+  --button-hover: #4338ca;
+}
+
+/* 🌙 Tryb ciemny */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --accent: #6366f1;
+    --button-hover: #4f46e5;
+  }
+}
+
+/* 🌍 Styl dla całego dokumentu */
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', Arial, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease; /* 💡 Płynna zmiana trybu */
+}
+
+/* 🎨 Nagłówki */
+h1, h2, h3, h4 {
+  font-weight: bold;
+  color: var(--foreground);
+}
+
+/* ✨ Przycisk */
+button {
+  background-color: var(--accent);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+button:hover {
+  background-color: var(--button-hover);
+  transform: scale(1.05);
+}
+
+/* 🔗 Linki */
+a {
+  color: var(--accent);
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--button-hover);
+  text-decoration: underline;
+}
+
+/* 📱 Responsywność */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
